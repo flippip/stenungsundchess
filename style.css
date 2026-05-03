@@ -163,6 +163,29 @@ button:focus-visible {
   outline: none;
 }
 
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 0 18px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 0 8px 18px rgba(8, 6, 5, 0.16);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.button-link:hover,
+.button-link:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
 .hero-mark {
   display: grid;
   place-items: center;
@@ -337,6 +360,11 @@ button:focus-visible {
   font-size: clamp(1.45rem, 2.4vw, 2.15rem);
 }
 
+.content-card h3 {
+  margin: 30px 0 10px;
+  font-size: 1.16rem;
+}
+
 .content-card p {
   max-width: 700px;
   color: var(--muted);
@@ -346,6 +374,38 @@ button:focus-visible {
 
 .content-card p:last-child {
   margin-bottom: 0;
+}
+
+.guide-list {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-list li {
+  padding: 14px 16px;
+  border: 1px solid rgba(8, 6, 5, 0.14);
+  border-radius: 8px;
+  background: rgba(247, 245, 239, 0.62);
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.guide-list li.guide-list-important {
+  border: 2px solid rgba(185, 28, 28, 0.58);
+  background: rgba(185, 28, 28, 0.07);
+  box-shadow: 0 10px 24px rgba(185, 28, 28, 0.08);
+}
+
+.guide-list strong {
+  color: var(--ink);
+}
+
+.guide-list-important strong {
+  color: var(--accent);
 }
 
 .link-row {
