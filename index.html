@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stenungsunds Schackklubb</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header class="header">
+    <h1>♟ Stenungsunds Schackklubb</h1>
+    <nav>
+      <a href="#hem">Hem</a>
+      <a href="#om">Om oss</a>
+      <a href="#turneringar">Turneringar</a>
+      <a href="#medlemmar">Medlemmar</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <section id="hem" class="hero">
+    <h2>Välkommen till klubben</h2>
+    <p>Träna, spela och tävla i schack med oss i Stenungsund.</p>
+    <button onclick="showMessage()">Spela med oss</button>
+  </section>
+
+  <section id="om" class="section">
+    <h2>Om oss</h2>
+    <p>
+      Vi är en schackklubb för alla nivåer — från nybörjare till turneringsspelare.
+      Vi arrangerar veckospel, träningar, och har två lag i allsvenskan och distriktserien.
+    </p>
+    <p>
+        Juniorer träffas på tisdagar i Jörlandaskolans matsal (Novavägen 3). Nybörjare spelar 18-19. Fortsättningsgruppen spelar 18-20.
+    </p>
+    <p>
+        Seniorer träffas på torsdagar i Kyrkenorum (Uklumsvägen 4). Där spelar vi blixt, dricker kaffe och har kul!
+    </p>
+  </section>
+
+  <section id="turneringar" class="section">
+    <h2>Kommande turneringar</h2>
+    <ul id="tournament-list">
+      <!-- JS fyller här -->
+    </ul>
+  </section>
+
+  <section id="sponsorer" class="section">
+    <h2>Sponsorer</h2>
+    <div id="members"></div>
+  </section>
+
+  <section id="kontakt" class="section">
+    <h2>Kontakt</h2>
+    <p>Email: stenungsundschack@gmail.com</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Stenungsunds Schackklubb</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
