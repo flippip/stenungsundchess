@@ -232,18 +232,22 @@ button:focus-visible {
 .tile-list,
 .sponsor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 12px;
   margin: 24px 0 0;
   padding: 0;
 }
 
 .tile-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   list-style: none;
 }
 
+.sponsor-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
 .tile-list li,
-.sponsor-grid p {
+.sponsor-card {
   min-height: 78px;
   margin: 0;
   display: flex;
@@ -255,12 +259,35 @@ button:focus-visible {
   box-shadow: 0 10px 26px rgba(8, 6, 5, 0.07);
 }
 
-.sponsor-grid p {
+.sponsor-card {
+  flex-direction: column;
+  justify-content: center;
+  min-height: 156px;
   padding: 18px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
-.tile-list li:nth-child(even),
-.sponsor-grid p:nth-child(even) {
+.sponsor-card img {
+  width: 100%;
+  height: 74px;
+  object-fit: contain;
+}
+
+.sponsor-card:hover,
+.sponsor-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(8, 6, 5, 0.12);
+  outline: none;
+}
+
+.sponsor-card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.tile-list li:nth-child(even) {
   background: var(--ink);
   color: var(--white);
 }
@@ -507,6 +534,10 @@ button:focus-visible {
     padding-top: 22px;
     padding-left: 0;
   }
+
+  .tile-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 520px) {
@@ -530,5 +561,9 @@ button:focus-visible {
 
   .hero-mark {
     min-height: 220px;
+  }
+
+  .tile-list {
+    grid-template-columns: 1fr;
   }
 }

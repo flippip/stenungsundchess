@@ -13,15 +13,40 @@ const tournaments = [
     title: "Distriktserien",
     href: "distriktserien.html",
     summary: "Regionalt seriespel mot klubbar i distriktet, med Göteborgs distriktsserie som lokal koppling."
+  },
+  {
+    title: "Klubbmästerskap",
+    href: "klubbmasterskap.html",
+    summary: "Klubbens interna mästerskap där medlemmar möts i klassiska partier och spelar om årets klubbmästartitel."
   }
 ];
 
 const sponsorer = [
-  "Tjörns Sparbank",
-  "LÅAB",
-  "Timmerviks skafferi",
-  "Lifood",
-  "Schackbutiken"
+  {
+    name: "Tjörns Sparbank",
+    logo: "Images/tjorns-sparbank-logo.jpg",
+    url: "https://www.tjorns-sparbank.se/"
+  },
+  {
+    name: "LÅAB",
+    logo: "Images/laab-logo.png",
+    url: "https://laabjord.se/"
+  },
+  {
+    name: "Timmerviks skafferi",
+    logo: "Images/timmerviks-skafferi-logo.png",
+    url: "https://www.timmervikensskafferi.se/"
+  },
+  {
+    name: "Li-Food",
+    logo: "Images/lifood-logo.svg",
+    url: "https://www.hitta.se/verksamhet/li-food-ab-kotbxdkkl"
+  },
+  {
+    name: "Schackbutiken",
+    logo: "Images/schackbutiken-logo.jpg",
+    url: "https://www.schackbutiken.se/"
+  }
 ];
 
 const tournamentList = document.getElementById("tournament-list");
@@ -53,9 +78,20 @@ tournaments.forEach((tournament) => {
 const memberDiv = document.getElementById("members");
 
 sponsorer.forEach((sponsor) => {
-  const p = document.createElement("p");
-  p.textContent = sponsor;
-  memberDiv.appendChild(p);
+  const card = document.createElement("a");
+  card.className = "sponsor-card";
+  card.href = sponsor.url;
+  card.target = "_blank";
+  card.rel = "noopener noreferrer";
+  card.setAttribute("aria-label", `Besök ${sponsor.name}`);
+
+  const logo = document.createElement("img");
+  logo.src = sponsor.logo;
+  logo.alt = `${sponsor.name} logotyp`;
+  logo.loading = "lazy";
+
+  card.appendChild(logo);
+  memberDiv.appendChild(card);
 });
 
 function showMessage() {

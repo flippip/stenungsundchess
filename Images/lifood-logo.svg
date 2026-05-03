@@ -1,0 +1,7 @@
+<svg width="420" height="180" viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Li-Food</title>
+  <rect width="420" height="180" rx="20" fill="#ffffff"/>
+  <circle cx="86" cy="90" r="46" fill="#1d6b3a"/>
+  <path d="M65 94c23-42 50-44 70-20-19-7-38-1-57 18 17-8 35-8 52 2-19 21-45 24-65 0z" fill="#ffffff"/>
+  <text x="152" y="102" fill="#080605" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800">Li-Food</text>
+</svg>
