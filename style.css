@@ -241,6 +241,19 @@ button:focus-visible {
   padding-left: clamp(20px, 4vw, 36px);
 }
 
+.section-copy h2 {
+  margin: 0 0 clamp(22px, 3vw, 30px);
+}
+
+.section-copy .eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .section-heading-row {
   display: flex;
   align-items: center;
