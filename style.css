@@ -648,6 +648,10 @@ button:focus-visible {
     min-height: auto;
   }
 
+  #om .hero-mark {
+    display: none;
+  }
+
   .hero-mark {
     min-height: 260px;
   }
