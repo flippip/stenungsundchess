@@ -688,11 +688,11 @@ button:focus-visible {
     z-index: 2;
     border-left: 0;
     border-top: 1px solid rgba(8, 6, 5, 0.18);
-    padding-top: 22px;
+    padding-top: clamp(32px, 5vw, 42px);
     padding-left: 0;
     background: rgba(247, 245, 239, 0.95);
     border-radius: 20px;
-    padding: clamp(26px, 4vw, 34px);
+    padding: clamp(32px, 5vw, 42px) clamp(26px, 4vw, 34px) clamp(28px, 5vw, 40px);
   }
 
   .section-copy h2 {
