@@ -646,14 +646,36 @@ button:focus-visible {
 
   .hero {
     min-height: auto;
+    padding-bottom: clamp(120px, 14vw, 140px);
+  }
+
+  #om {
+    position: relative;
+    padding-top: clamp(120px, 14vw, 140px);
   }
 
   #om .hero-mark {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: min(240px, 70%);
+    max-width: 260px;
+    min-height: auto;
+    padding: clamp(18px, 3vw, 24px);
+    background: var(--white);
+    border: 1px solid rgba(8, 6, 5, 0.16);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    z-index: 1;
+  }
+
+  #om .hero-mark img {
+    width: 100%;
   }
 
   .hero-mark {
-    min-height: 260px;
+    min-height: auto;
   }
 
   .section-copy {
