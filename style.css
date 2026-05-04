@@ -224,6 +224,12 @@ button:focus-visible {
   padding: clamp(44px, 6vw, 72px) clamp(18px, 4vw, 32px);
 }
 
+#turneringar {
+  border-left: 4px solid var(--accent);
+  background: rgba(185, 28, 28, 0.03);
+  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.1);
+}
+
 .split-section,
 .contact-section {
   display: grid;
