@@ -655,6 +655,10 @@ button:focus-visible {
     padding-bottom: clamp(36px, 6vw, 50px);
   }
 
+  #om.split-section {
+    grid-template-columns: 1fr;
+  }
+
   #om .hero-mark {
     position: absolute;
     top: 0;
