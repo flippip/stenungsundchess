@@ -94,6 +94,67 @@ sponsorer.forEach((sponsor) => {
   memberDiv.appendChild(card);
 });
 
+/**
+ * Scroll reveal – sections are hidden by blocking inline script.
+ * This IntersectionObserver reveals them when they scroll into view.
+ */
+(function initReveal() {
+  // Ensure all sections have the transition property set inline (works both ways)
+  var allSections = document.querySelectorAll("#om, #turneringar, #sponsorer, #kontakt");
+  for (var i = 0; i < allSections.length; i++) {
+    allSections[i].style.setProperty("transition",
+      "opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "important"
+    );
+  }
+
+  // Also set transition on children of reveal-children containers
+  var allContainers = document.querySelectorAll("[data-reveal-children]");
+  for (var i = 0; i < allContainers.length; i++) {
+    var children = allContainers[i].children;
+    for (var c = 0; c < children.length; c++) {
+      children[c].style.setProperty("transition",
+        "opacity 0.5s ease-out, transform 0.5s ease-out",
+        "important"
+      );
+    }
+  }
+
+  // IntersectionObserver – reveal when half in view, hide when scrolled away
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        var isVisible = entry.intersectionRatio >= 0.5;
+        entry.target.style.setProperty("opacity", isVisible ? "1" : "0", "important");
+        entry.target.style.setProperty("transform", isVisible ? "translateY(0)" : "translateY(40px)", "important");
+
+        // Handle children of reveal-children containers
+        if (entry.target.hasAttribute("data-reveal-children")) {
+          var kids = entry.target.children;
+          for (var k = 0; k < kids.length; k++) {
+            kids[k].style.setProperty("opacity", isVisible ? "1" : "0", "important");
+            kids[k].style.setProperty("transform", isVisible ? "translateY(0)" : "translateY(24px)", "important");
+            kids[k].style.setProperty("transition-delay", isVisible ? (0.05 + k * 0.07).toFixed(2) + "s" : "0s", "important");
+          }
+        }
+      });
+    },
+    { threshold: [0, 0.25, 0.5] }
+  );
+
+  // Observe all sections
+  var sections = document.querySelectorAll("#om, #turneringar, #sponsorer, #kontakt");
+  for (var s = 0; s < sections.length; s++) {
+    observer.observe(sections[s]);
+  }
+
+  // Observe reveal-children containers too
+  var containers = document.querySelectorAll("[data-reveal-children]");
+  for (var d = 0; d < containers.length; d++) {
+    observer.observe(containers[d]);
+  }
+})();
+
 function showMessage() {
   alert("Kul! Kontakta oss på stenungsundschack@gmail.com för att bli medlem.");
 }
