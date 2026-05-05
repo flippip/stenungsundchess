@@ -23,9 +23,9 @@ stenungsundchess/
 │   │   ├── knatterallyt.html
 │   │   └── vett-och-etikett.html
 │   ├── styles/                # CSS-filer
-│   │   └── style.css          # Huvudstil
+│   │   └── main.css           # Huvudstil
 │   ├── scripts/               # JavaScript-filer
-│   │   └── script.js          # Huvudscript
+│   │   └── app.js             # Huvudscript
 │   ├── assets/                # Resurser
 │   │   ├── docs/              # PDF-filer för Knatterallyt-tävlingar
 │   │   └── images/            # Bilder
