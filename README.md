@@ -9,10 +9,10 @@ stenungsundchess/
 ├── index.html                 # Root-pekare som vidarebefordrar till src/pages/hem.html
 ├── CNAME                      # GitHub Pages-domän
 ├── README.md                  # Projektdokumentation
-├── knatterallyt-invites/      # PDF-filer för Knatterallyt-tävlingar
+├── knatterallyt-invites/      # PDF-filer för Knatterallyt-tävlingar (deprecated)
 ├── src/
 │   ├── pages/                 # Alla HTML-sidor
-│   │   ├── hem.html           # Hemside
+│   │   ├── hem.html           # Hemsida
 │   │   ├── verksamhet.html    # Verksamhetssida
 │   │   ├── nyheter.html       # Nyheter
 │   │   ├── traning.html       # Träning
@@ -26,13 +26,15 @@ stenungsundchess/
 │   │   └── style.css          # Huvudstil
 │   ├── scripts/               # JavaScript-filer
 │   │   └── script.js          # Huvudscript
-│   ├── images/                # Bilder
-│   │   ├── ssk.svg            # Klubbens logotyp
-│   │   ├── laab-logo.png
-│   │   ├── lifood-logo.svg
-│   │   ├── schackbutiken-logo.jpg
-│   │   ├── timmerviks-skafferi-logo.png
-│   │   └── tjorns-sparbank-logo.jpg
+│   ├── assets/                # Resurser
+│   │   ├── docs/              # PDF-filer för Knatterallyt-tävlingar
+│   │   └── images/            # Bilder
+│   │       ├── ssk.svg            # Klubbens logotyp
+│   │       ├── laab-logo.png
+│   │       ├── lifood-logo.svg
+│   │       ├── schackbutiken-logo.jpg
+│   │       ├── timmerviks-skafferi-logo.png
+│   │       └── tjorns-sparbank-logo.jpg
 │   ├── components/            # Framtida komponenter
 │   ├── api/                   # Framtida API-integrationer
 │   └── utils/                 # Framtida hjälpfunktioner

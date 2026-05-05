@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test - Komponentladdning</title>
+  <link rel="stylesheet" href="src/styles/style.css" />
+  <style>
+    /* Extra styles for testing */
+    .test-info {
+      background: #f0f0f0;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      font-family: monospace;
+    }
+    .test-info h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Component placeholders -->
+  <div data-component="header"></div>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Test</p>
+      <h1>Komponentladdning Test</h1>
+      <p>Denna sida testar att header och footer laddas dynamiskt från separata filer.</p>
+    </section>
+
+    <section class="content-panel">
+      <div class="content-card">
+        <h2>Testinformation</h2>
+        <div class="test-info">
+          <h3>Vad testas?</h3>
+          <p><strong>Header:</strong> Ska visas ovanför detta innehåll med klubbens logotyp och navigation.</p>
+          <p><strong>Footer:</strong> Ska visas under detta innehåll med logotyp och copyright.</p>
+          
+          <h3>Förväntat resultat</h3>
+          <ul>
+            <li>Header ska vara identisk på alla sidor</li>
+            <li>Footer ska vara identisk på alla sidor</li>
+            <li>Navigationen ska fungera korrekt</li>
+            <li>Alla länkar ska peka rätt</li>
+          </ul>
+
+          <h3>Teknisk information</h3>
+          <ul>
+            <li><strong>Komponentfiler:</strong> src/components/header.html, src/components/footer.html</li>
+            <li><strong>Laddningsscript:</strong> src/scripts/components.js</li>
+            <li><strong>Platshållare:</strong> div-element med data-component="header/footer"</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-component="footer"></div>
+  
+  <script src="src/scripts/components.js"></script>
+</body>
+</html>

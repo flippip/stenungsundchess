@@ -4,23 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stenungsunds Schackklubb</title>
-  <link rel="icon" href="../images/ssk.svg" type="image/svg+xml" />
+  <link rel="icon" href="../assets/images/ssk.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#hem" aria-label="Stenungsunds Schackklubb startsida">
-      <img src="../images/ssk.svg" alt="" class="brand-logo" />
-      <span class="brand-text">Stenungsunds Schackklubb</span>
-    </a>
-    <nav class="site-nav" aria-label="Huvudmeny">
-      <a href="#hem">Hem</a>
-      <a href="verksamhet.html">Verksamhet</a>
-      <a href="nyheter.html">Nyheter</a>
-      <a href="#">Styrelsen</a>
-      <a href="hem.html#kontakt">Kontakt</a>
-    </nav>
-  </header>
+  <div data-component="header"></div>
 
   <main>
     <section id="hem" class="hero">
@@ -37,7 +25,7 @@
 
     <section id="om" class="section split-section">
       <div class="hero-mark" aria-hidden="true">
-        <img src="../images/ssk.svg" alt="Stenungsunds Schackklubb logo" />
+        <img src="../assets/images/ssk.svg" alt="Stenungsunds Schackklubb logo" />
       </div>
       <div class="section-copy">
         <p class="eyebrow">Klubben</p>
@@ -83,11 +71,9 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <img src="../images/ssk.svg" alt="" />
-    <p>© 2026 Stenungsunds Schackklubb</p>
-  </footer>
+  <div data-component="footer"></div>
 
+  <script src="../scripts/components.js"></script>
   <script src="../scripts/script.js"></script>
 </body>
 </html>
