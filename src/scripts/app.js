@@ -158,7 +158,7 @@ sponsorer.forEach((sponsor) => {
 
   // Lower threshold for mobile users (≈ half of desktop threshold)
   var isMobile = window.innerWidth <= 820;
-  var revealThreshold = isMobile ? 0.19 : 0.38;
+  var revealThreshold = isMobile ? 0.1 : 0.38;
 
   // IntersectionObserver – reveal when in view, hide when scrolled away
   var observer = new IntersectionObserver(
@@ -179,7 +179,7 @@ sponsorer.forEach((sponsor) => {
         }
       });
     },
-    { threshold: isMobile ? [0, 0.1, 0.19] : [0, 0.15, 0.38] }
+    { threshold: isMobile ? [0, 0.05, 0.1] : [0, 0.15, 0.38] }
   );
 
   // Observe all sections
