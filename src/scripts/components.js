@@ -8,28 +8,49 @@
 
   // Embedded header component HTML
   const HEADER_HTML = `
-<header class="site-header">
-  <a class="brand" href="hem.html#hem" aria-label="Stenungsunds Schackklubb startsida">
-    <img src="../assets/images/ssk.svg" alt="" class="brand-logo" />
-    <span class="brand-text">Stenungsunds Schackklubb</span>
-  </a>
-  <nav class="site-nav" aria-label="Huvudmeny">
-    <a href="hem.html#hem">Hem</a>
-    <a href="verksamhet.html">Verksamhet</a>
-    <a href="nyheter.html">Nyheter</a>
-    <a href="styrelse.html">Styrelsen</a>
-    <a href="hem.html#kontakt">Kontakt</a>
-  </nav>
-</header>
-`.trim();
+    <header class="site-header">
+      <a class="brand" href="hem.html#hem" aria-label="Stenungsunds Schackklubb startsida">
+        <img src="../assets/images/ssk.svg" alt="" class="brand-logo" />
+        <span class="brand-text">Stenungsunds Schackklubb</span>
+      </a>
+      <nav class="site-nav" aria-label="Huvudmeny">
+        <a href="hem.html#hem">Hem</a>
+        <a href="nyheter.html">Nyheter</a>
+        <a href="verksamhet.html">Verksamhet</a>
+        <a href="kalender.html">Kalender</a>
+        <a href="media.html">Media</a>
+        <a href="styrelsen.html">Styrelsen</a>
+        <a href="hem.html#kontakt">Kontakt</a>
+      </nav>
+    </header>
+    `.trim();
 
   // Embedded footer component HTML
   const FOOTER_HTML = `
-<footer class="footer">
-  <img src="../assets/images/ssk.svg" alt="" />
-  <p>© 2026 Stenungsunds Schackklubb</p>
-</footer>
-`.trim();
+    <footer class="footer">
+      <img src="../assets/images/ssk.svg" alt="" />
+      <p>© 2026 Stenungsunds Schackklubb</p>
+    </footer>
+    `.trim();
+
+  /**
+   * 
+   * @param {string} path - Path to html file
+   * @returns HTML string from path
+   */
+  async function loadHTML(path) {
+    try {
+      const response = await fetch(path);
+      
+      if (!response.ok) throw new Error('Could not read file.');
+      
+      const htmlString = await response.text();
+      return htmlString;
+
+    } catch (error) {
+      console.error('Fel:', error);
+    }
+  }
 
   /**
    * Insert HTML content into placeholder elements
