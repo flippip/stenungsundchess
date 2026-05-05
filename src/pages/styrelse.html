@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Styrelsen | Stenungsunds Schackklubb</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <style>
+    .board-list {
+      display: grid;
+      gap: 10px;
+      max-width: 720px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .board-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 52px;
+      padding: 14px 20px;
+      border: 1px solid rgba(8, 6, 5, 0.14);
+      border-radius: 6px;
+      background: var(--white);
+      transition: background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .board-list li:hover {
+      background: rgba(247, 245, 239, 0.8);
+      box-shadow: 0 8px 20px rgba(8, 6, 5, 0.08);
+    }
+
+    .board-role {
+      flex-shrink: 0;
+      min-width: 140px;
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+    }
+
+    .board-name {
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 1.02rem;
+    }
+
+    @media (max-width: 520px) {
+      .board-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        min-height: 44px;
+        padding: 12px 16px;
+      }
+
+      .board-role {
+        min-width: auto;
+        font-size: 0.82rem;
+      }
+
+      .board-name {
+        font-size: 0.96rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div data-component="header"></div>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Stenungsunds Schackklubb</p>
+      <h1>Styrelsen</h1>
+      <p>Klubbens styrelse arbetar för att driva verksamheten framåt och skapa en välkomnande miljö för alla schackintresserade.</p>
+    </section>
+
+    <section class="content-panel">
+      <article class="content-card">
+        <h2>Årets styrelse</h2>
+        <ul class="board-list">
+          <li>
+            <span class="board-role">Ordförande</span>
+            <span class="board-name">Anders Lindgren</span>
+          </li>
+          <li>
+            <span class="board-role">Vice ordförande</span>
+            <span class="board-name">Maria Ekström</span>
+          </li>
+          <li>
+            <span class="board-role">Kassör</span>
+            <span class="board-name">Erik Bergström</span>
+          </li>
+          <li>
+            <span class="board-role">Sekreterare</span>
+            <span class="board-name">Karin Holm</span>
+          </li>
+          <li>
+            <span class="board-role">Ledamot</span>
+            <span class="board-name">Johan Nilsson</span>
+          </li>
+          <li>
+            <span class="board-role">Ledamot</span>
+            <span class="board-name">Sofia Dahl</span>
+          </li>
+          <li>
+            <span class="board-role">Webbansvarig</span>
+            <span class="board-name">Filip Pettersson</span>
+          </li>
+          <li>
+            <span class="board-role">Revisor</span>
+            <span class="board-name">Lena Gustafsson</span>
+          </li>
+          <li>
+            <span class="board-role">Valberedning</span>
+            <span class="board-name">Oskar Svensson</span>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <div data-component="footer"></div>
+  <script src="../scripts/components.js"></script>
+</body>
+</html>

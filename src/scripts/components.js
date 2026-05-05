@@ -17,7 +17,7 @@
     <a href="hem.html#hem">Hem</a>
     <a href="verksamhet.html">Verksamhet</a>
     <a href="nyheter.html">Nyheter</a>
-    <a href="#">Styrelsen</a>
+    <a href="styrelse.html">Styrelsen</a>
     <a href="hem.html#kontakt">Kontakt</a>
   </nav>
 </header>
