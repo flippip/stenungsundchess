@@ -156,11 +156,15 @@ sponsorer.forEach((sponsor) => {
     }
   }
 
-  // IntersectionObserver – reveal when ~¼ in view, hide when scrolled away
+  // Lower threshold for mobile users (≈ half of desktop threshold)
+  var isMobile = window.innerWidth <= 820;
+  var revealThreshold = isMobile ? 0.19 : 0.38;
+
+  // IntersectionObserver – reveal when in view, hide when scrolled away
   var observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
-        var isVisible = entry.intersectionRatio >= 0.38;
+        var isVisible = entry.intersectionRatio >= revealThreshold;
         entry.target.style.setProperty("opacity", isVisible ? "1" : "0", "important");
         entry.target.style.setProperty("transform", isVisible ? "translateY(0)" : "translateY(40px)", "important");
 
@@ -175,7 +179,7 @@ sponsorer.forEach((sponsor) => {
         }
       });
     },
-    { threshold: [0, 0.15, 0.38] }
+    { threshold: isMobile ? [0, 0.1, 0.19] : [0, 0.15, 0.38] }
   );
 
   // Observe all sections
