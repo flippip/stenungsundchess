@@ -156,11 +156,11 @@ sponsorer.forEach((sponsor) => {
     }
   }
 
-  // IntersectionObserver – reveal when half in view, hide when scrolled away
+  // IntersectionObserver – reveal when ~¼ in view, hide when scrolled away
   var observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
-        var isVisible = entry.intersectionRatio >= 0.5;
+        var isVisible = entry.intersectionRatio >= 0.38;
         entry.target.style.setProperty("opacity", isVisible ? "1" : "0", "important");
         entry.target.style.setProperty("transform", isVisible ? "translateY(0)" : "translateY(40px)", "important");
 
@@ -175,7 +175,7 @@ sponsorer.forEach((sponsor) => {
         }
       });
     },
-    { threshold: [0, 0.25, 0.5] }
+    { threshold: [0, 0.15, 0.38] }
   );
 
   // Observe all sections
