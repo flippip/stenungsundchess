@@ -253,6 +253,12 @@ button:focus-visible {
   box-shadow: 0 8px 24px rgba(185, 28, 28, 0.1);
 }
 
+#past-turneringar {
+  border-left: 4px solid var(--muted);
+  background: rgba(105, 99, 90, 0.06);
+  box-shadow: 0 8px 24px rgba(105, 99, 90, 0.1);
+}
+
 .split-section,
 .contact-section {
   display: grid;

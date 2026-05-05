@@ -14,23 +14,114 @@
       <p class="eyebrow">Nyheter</p>
       <h1>Senaste nyheterna</h1>
       <p>Håll dig uppdaterad om klubbens aktiviteter, tävlingar och kommande evenemang.</p>
+      <div class="link-row" style="margin-top: 24px;">
+        <a class="text-link" id="back-link" href="#">Tillbaka</a>
+        <a class="text-link source-link" id="flode-link" href="#">Gå till flöde</a>
+      </div>
     </section>
 
     <section class="content-panel">
-        <article class="content-card">
+        <article class="content-card" id="turneringskort">
             <section id="turneringar" class="section">
             <p class="eyebrow">Spelschema</p>
             <div class="section-heading-row">
-                <h2>Kommande turneringar</h2>
+                <h2>Aktuella turneringar</h2>
             </div>
             <ul id="tournament-list" class="tile-list"></ul>
             </section>
+
+            <div id="past-wrap" class="collapse-wrap">
+                <section id="past-turneringar" class="section">
+                <p class="eyebrow">Avslutade</p>
+                <div class="section-heading-row">
+                    <h2>Passerade turneringar</h2>
+                </div>
+                <ul id="past-tournament-list" class="tile-list"></ul>
+                </section>
+            </div>
+
+            <button id="expand-btn" class="expand-btn">Expandera</button>
         </article>
+
+        <style>
+            #past-wrap {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.4s ease;
+            }
+            #past-wrap > .section {
+                min-height: 0;
+                overflow: hidden;
+            }
+            #past-wrap.open {
+                grid-template-rows: 1fr;
+            }
+            #expand-btn {
+                display: block;
+                margin: 0 auto 16px;
+                min-height: 42px;
+                padding: 0 24px;
+                border: 2px solid var(--muted);
+                border-radius: 6px;
+                background: transparent;
+                color: var(--muted);
+                font-weight: 800;
+                cursor: pointer;
+                transition: background 0.2s, color 0.2s;
+            }
+            #expand-btn:hover,
+            #expand-btn:focus-visible {
+                background: var(--muted);
+                color: var(--white);
+                outline: none;
+            }
+            #expand-btn.open {
+                border-color: var(--accent);
+                color: var(--accent);
+            }
+            #expand-btn.open:hover,
+            #expand-btn.open:focus-visible {
+                background: var(--accent);
+                color: var(--white);
+            }
+        </style>
+
+        <script>
+            (function() {
+                var wrap = document.getElementById('past-wrap');
+                var btn = document.getElementById('expand-btn');
+                if (!wrap || !btn) return;
+                btn.addEventListener('click', function() {
+                    var isOpen = wrap.classList.toggle('open');
+                    btn.classList.toggle('open', isOpen);
+                    btn.textContent = isOpen ? 'Dölj' : 'Expandera';
+                });
+            })();
+            (function() {
+                var backLink = document.getElementById('back-link');
+                if (backLink) {
+                    backLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.history.back();
+                    });
+                }
+            })();
+            (function() {
+                var flodeLink = document.getElementById('flode-link');
+                if (flodeLink) {
+                    flodeLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var target = document.getElementById('flode');
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    });
+                }
+            })();
+        </script>
     </section>
     
 
     <section class="content-panel">
-      <article class="content-card">
+      <article class="content-card" id="flode">
         <h2>Vad händer nu?</h2>
         <p>Här publicerar vi nyheter om turneringar, träningar och andra händelser i klubben. Du får snabba uppdateringar om vad som sker i vår schackgemenskap.</p>
       </article>

@@ -21,6 +21,42 @@ const tournaments = [
   }
 ];
 
+const pastTournaments = [
+  {
+    title: "Exempel 2025",
+    href: "#",
+    summary: "En passerad tävling från föregående säsong."
+  }
+];
+
+const pastTournamentList = document.getElementById("past-tournament-list");
+
+if (pastTournamentList) {
+  pastTournaments.forEach((tournament) => {
+    const li = document.createElement("li");
+
+    const link = document.createElement("a");
+    link.className = "tournament-card";
+    link.href = tournament.href;
+
+    const title = document.createElement("span");
+    title.className = "tournament-title";
+    title.textContent = tournament.title;
+
+    const summary = document.createElement("span");
+    summary.className = "tournament-summary";
+    summary.textContent = tournament.summary;
+
+    const action = document.createElement("span");
+    action.className = "tournament-action";
+    action.textContent = "Läs mer";
+
+    link.append(title, summary, action);
+    li.appendChild(link);
+    pastTournamentList.appendChild(li);
+  });
+}
+
 const sponsorer = [
   {
     name: "Tjörns Sparbank",
