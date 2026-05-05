@@ -24,27 +24,27 @@ const tournaments = [
 const sponsorer = [
   {
     name: "Tjörns Sparbank",
-    logo: "Images/tjorns-sparbank-logo.jpg",
+    logo: "../images/tjorns-sparbank-logo.jpg",
     url: "https://www.tjorns-sparbank.se/"
   },
   {
     name: "LÅAB",
-    logo: "Images/laab-logo.png",
+    logo: "../images/laab-logo.png",
     url: "https://laabjord.se/"
   },
   {
     name: "Timmerviks skafferi",
-    logo: "Images/timmerviks-skafferi-logo.png",
+    logo: "../images/timmerviks-skafferi-logo.png",
     url: "https://www.timmervikensskafferi.se/"
   },
   {
     name: "Li-Food",
-    logo: "Images/lifood-logo.svg",
+    logo: "../images/lifood-logo.svg",
     url: "https://www.hitta.se/verksamhet/li-food-ab-kotbxdkkl"
   },
   {
     name: "Schackbutiken",
-    logo: "Images/schackbutiken-logo.jpg",
+    logo: "../images/schackbutiken-logo.jpg",
     url: "https://www.schackbutiken.se/"
   }
 ];

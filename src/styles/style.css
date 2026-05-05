@@ -512,7 +512,7 @@ button:focus-visible {
 }
 
 .guide-list-important strong {
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .event-list {
